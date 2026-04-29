@@ -1,10 +1,18 @@
-# numly
+<p align="center">
+  <img src="numly_rounded_square.svg" alt="numly logo" width="120" height="120"/>
+</p>
 
-![PyPI](https://img.shields.io/pypi/v/numly)
-![Python](https://img.shields.io/pypi/pyversions/numly)
-![License](https://img.shields.io/github/license/yourusername/numly)
+<h1 align="center">numly</h1>
 
-> A Python library to work with numbers across formats — decimal, roman, words, binary, hex, and more.
+<p align="center">
+  <img src="https://img.shields.io/pypi/v/numly" alt="PyPI version"/>
+  <img src="https://img.shields.io/pypi/pyversions/numly" alt="Python versions"/>
+  <img src="https://img.shields.io/github/license/yourusername/numly" alt="License"/>
+</p>
+
+<p align="center">
+  A Python library to work with numbers across formats — decimal, roman, words, binary, hex, and more.
+</p>
 
 ---
 
@@ -52,7 +60,7 @@ numly.to_hex(255)           # → 'FF'
 |---|---|---|
 | `to_roman(n)` | `int` | `str` — e.g. `'XIV'` |
 | `from_roman(s)` | `str` | `int` — e.g. `14` |
-| `to_words(n)` | `int` | `str` — e.g. `'fourteen'` |
+| `to_words(n)` | `int` | `str` — e.g. `'forty-two'` |
 | `to_binary(n)` | `int` | `str` — e.g. `'1110'` |
 | `to_octal(n)` | `int` | `str` — e.g. `'16'` |
 | `to_hex(n)` | `int` | `str` — e.g. `'E'` |
