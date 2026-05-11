@@ -1,0 +1,40 @@
+Numeral Systems (by base)
+
+Binary (base-2) — uses 0, 1 → e.g., 1010 = 10
+Octal (base-8) — uses 0–7 → e.g., 12 = 10
+Decimal (base-10) — the everyday system, uses 0–9
+Hexadecimal (base-16) — uses 0–9 and A–F → e.g., FF = 255
+Base-64 — used in encoding (not strictly a number system, but common in computing)
+
+Historical / Cultural Systems
+
+Roman numerals — I, V, X, L, C, D, M
+Arabic-Indic — ١ ٢ ٣ (used in Arabic script)
+Chinese numerals — 一, 二, 三...
+Greek numerals — α, β, γ...
+Egyptian hieroglyphic numerals
+
+Number Types (mathematical)
+
+Integer — whole numbers, e.g., -3, 0, 42
+Float / Decimal — e.g., 3.14
+Fraction / Rational — e.g., 3/4
+Scientific notation — e.g., 1.5 × 10⁶
+Complex numbers — e.g., 3 + 4i
+
+Formatting / Display Conventions
+
+Locale-based — 1,000.50 (US) vs 1.000,50 (Europe)
+Currency — $1,000.00, €1.000,00
+Percentage — 75%
+Ordinal — 1st, 2nd, 3rd...
+Words — "one thousand", "forty-two"
+Signed — +42, -42
+Zero-padded — 007, 0042
+
+Computing-Specific
+
+Fixed-point — precise decimal position, used in finance
+Floating-point — IEEE 754 (how computers store decimals)
+BCD (Binary-Coded Decimal) — each digit stored separately in binary
+Two's complement — how negative integers are stored in binary
