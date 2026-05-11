@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="numly_rounded_square.svg" alt="numly logo" width="120" height="120"/>
+  <img src="https://raw.githubusercontent.com/TheMadrasTechie/numly/master/numly_rounded_square.svg" width="120" height="120"/>
 </p>
 
 <h1 align="center">numly</h1>

@@ -5,11 +5,11 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 setup(
     name="numly",
-    version="0.1.0",
+    version="0.1.1",
     packages=find_packages(),
     install_requires=[],
     author="TheMadrasTechie",
-    author_email="you@example.com",
+    author_email="sundarbala36663@gmail.com",
     description="Convert numbers across numeral systems — Roman, Chinese, Greek, Egyptian, Arabic-Indic and more.",
     long_description=long_description,
     long_description_content_type="text/markdown",

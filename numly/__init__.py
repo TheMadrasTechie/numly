@@ -31,7 +31,7 @@ Individual modules
     from numly.convert      import convert, to_all, SYSTEMS
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __author__  = "numly contributors"
 __license__ = "MIT"
 
