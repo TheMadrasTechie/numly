@@ -1,18 +1,23 @@
 from setuptools import setup, find_packages
 
-import os
-
-readme = next((f for f in os.listdir(".") if f.lower() == "readme.md"), None)
-with open(readme, "r", encoding="utf-8") as f:
-    long_description = f.read()
+# safely load readme — works regardless of filename case
+try:
+    with open("README.md", "r", encoding="utf-8") as f:
+        long_description = f.read()
+except FileNotFoundError:
+    try:
+        with open("readme.md", "r", encoding="utf-8") as f:
+            long_description = f.read()
+    except FileNotFoundError:
+        long_description = "A Python library to convert numbers across numeral systems."
 
 setup(
     name="numly",
-    version="0.1.1",
+    version="0.1.0",
     packages=find_packages(),
     install_requires=[],
     author="TheMadrasTechie",
-    author_email="sundarbala36663@gmail.com",
+    author_email="you@example.com",
     description="Convert numbers across numeral systems — Roman, Chinese, Greek, Egyptian, Arabic-Indic and more.",
     long_description=long_description,
     long_description_content_type="text/markdown",
