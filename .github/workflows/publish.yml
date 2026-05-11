@@ -49,16 +49,55 @@ jobs:
           python -m pip install --upgrade pip
           pip install build twine
 
+      - name: Verify README exists
+        run: |
+          if [ -f "README.md" ]; then
+            echo "Found README.md"
+            echo "README_FILE=README.md" >> "$GITHUB_ENV"
+          elif [ -f "readme.md" ]; then
+            echo "Found readme.md"
+            echo "README_FILE=readme.md" >> "$GITHUB_ENV"
+          else
+            echo "ERROR: No README file found!"
+            exit 1
+          fi
+          echo "--- README preview (first 10 lines) ---"
+          head -10 "$README_FILE"
+
       - name: Update version in setup.py
         run: |
           VERSION="${{ needs.check-commit.outputs.version }}"
           echo "Updating setup.py version to: $VERSION"
           sed -i "s/version=\"[^\"]*\"/version=\"$VERSION\"/" setup.py
-          echo "Updated setup.py:"
+          echo "--- Updated setup.py version line ---"
           grep "version=" setup.py
+
+      - name: Fix README filename in setup.py
+        run: |
+          sed -i "s/open(\"README.md\"/open(\"$README_FILE\"/" setup.py
+          sed -i "s/open(\"readme.md\"/open(\"$README_FILE\"/" setup.py
+          echo "--- setup.py open() line ---"
+          grep "open(" setup.py
+
+      - name: Clean old build artifacts
+        run: |
+          rm -rf dist/ build/ *.egg-info/
 
       - name: Build package
         run: python -m build
+
+      - name: Verify built package has README
+        run: |
+          WHL=$(ls dist/*.whl)
+          echo "Checking $WHL for METADATA..."
+          python -c "
+          import zipfile, sys
+          whl = '$WHL'
+          with zipfile.ZipFile(whl) as z:
+              meta = [f for f in z.namelist() if f.endswith('METADATA')][0]
+              content = z.read(meta).decode()
+              print(content[:500])
+          "
 
       - name: Publish to PyPI
         env:
