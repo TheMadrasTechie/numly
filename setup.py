@@ -17,7 +17,7 @@ setup(
     packages=find_packages(),
     install_requires=[],
     author="TheMadrasTechie",
-    author_email="you@example.com",
+    author_email="Sundarbala36663@gmail.com",
     description="Convert numbers across numeral systems — Roman, Chinese, Greek, Egyptian, Arabic-Indic and more.",
     long_description=long_description,
     long_description_content_type="text/markdown",
