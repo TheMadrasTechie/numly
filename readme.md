@@ -81,4 +81,4 @@ pip install -e .
 
 ## License
 
-MIT License © 2026 yourusername
+MIT License © 2026 TheMadrasTechie
