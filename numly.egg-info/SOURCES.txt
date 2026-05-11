@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+numly/__init__.py
+numly/arabic_indic.py
+numly/chinese.py
+numly/convert.py
+numly/egyptian.py
+numly/greek.py
+numly/roman.py
+numly.egg-info/PKG-INFO
+numly.egg-info/SOURCES.txt
+numly.egg-info/dependency_links.txt
+numly.egg-info/top_level.txt
