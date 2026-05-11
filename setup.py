@@ -11,6 +11,7 @@ except FileNotFoundError:
     except FileNotFoundError:
         long_description = "A Python library to convert numbers across numeral systems."
 
+print(long_description)
 setup(
     name="numly",
     version="0.1.0",
