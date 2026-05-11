@@ -15,10 +15,6 @@
   <img src="https://img.shields.io/pypi/dm/numly" alt="Downloads"/>
 </p>
 
-
-<p align="center">
-  <code>pip install numly</code>
-</p>
 ---
 
 ## What is numly?
