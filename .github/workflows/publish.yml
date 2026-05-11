@@ -3,7 +3,7 @@ name: Publish to PyPI (conditional on commit message)
 on:
   push:
     branches:
-      - master   # only when pushing to master
+      - master
 
 jobs:
   check-commit:
@@ -48,28 +48,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install build twine
 
-      - name: Detect README and fix setup.py
+      - name: Normalise README filename to README.md
         run: |
-          # find the readme file
-          if [ -f "README.md" ]; then
-            README_FILE="README.md"
-          elif [ -f "readme.md" ]; then
-            README_FILE="readme.md"
-          else
-            echo "ERROR: No README file found!"
-            ls -la
-            exit 1
+          # Always ensure README.md exists (handles readme.md, Readme.md etc.)
+          if [ ! -f "README.md" ]; then
+            README_LOWER=$(find . -maxdepth 1 -iname "readme.md" | head -1)
+            if [ -n "$README_LOWER" ]; then
+              cp "$README_LOWER" README.md
+              echo "Copied $README_LOWER → README.md"
+            else
+              echo "ERROR: No README file found!"
+              ls -la
+              exit 1
+            fi
           fi
-
-          echo "Found: $README_FILE"
-          echo "--- First 5 lines ---"
-          head -5 "$README_FILE"
-
-          # patch setup.py to use the correct filename
-          sed -i "s|open(\"README.md\"|open(\"$README_FILE\"|g" setup.py
-          sed -i "s|open(\"readme.md\"|open(\"$README_FILE\"|g" setup.py
-          echo "--- setup.py open() line ---"
-          grep "open(" setup.py
+          echo "--- README.md first 5 lines ---"
+          head -5 README.md
 
       - name: Update version in setup.py
         run: |
@@ -94,7 +88,7 @@ jobs:
           with zipfile.ZipFile(whl) as z:
               meta = [f for f in z.namelist() if f.endswith('METADATA')][0]
               content = z.read(meta).decode()
-              print(content[:600])
+              print(content[:800])
           "
 
       - name: Publish to PyPI

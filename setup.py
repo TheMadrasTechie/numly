@@ -1,15 +1,7 @@
 from setuptools import setup, find_packages
 
-# safely load readme
-try:
-    with open("README.md", "r", encoding="utf-8") as f:
-        long_description = f.read()
-except FileNotFoundError:
-    try:
-        with open("readme.md", "r", encoding="utf-8") as f:
-            long_description = f.read()
-    except FileNotFoundError:
-        long_description = "A Python library to convert numbers across numeral systems."
+with open("README.md", "r", encoding="utf-8") as f:
+    long_description = f.read()
 
 setup(
     name="numly",
