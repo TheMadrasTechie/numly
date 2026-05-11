@@ -1,6 +1,9 @@
 from setuptools import setup, find_packages
 
-with open("readme.md", "r", encoding="utf-8") as f:
+import os
+
+readme = next((f for f in os.listdir(".") if f.lower() == "readme.md"), None)
+with open(readme, "r", encoding="utf-8") as f:
     long_description = f.read()
 
 setup(
