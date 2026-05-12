@@ -15,7 +15,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/TheMadrasTechie/numly",
     license="MIT",
-    keywords=["numerals", "roman", "chinese", "greek", "egyptian", "arabic-indic", "number", "converter"],
+    keywords=["numerals", "roman", "chinese", "greek", "egyptian", "arabic-indic", "number", "converter","tamil","mayan","babylonian","words"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
